@@ -666,15 +666,15 @@ func (handler *connectionHandler) handleMessage(msg sip.Message, raddr string) {
 		}
 
 		if !handler.Connection().Streamed() {
-			if !viaHop.Params.Has("rport") {
-				var port sip.Port
-				if viaHop.Port != nil {
-					port = *viaHop.Port
-				} else {
-					port = sip.DefaultPort(handler.Connection().Network())
-				}
-				raddr = fmt.Sprintf("%s:%d", rhost, port)
-			}
+			//if !viaHop.Params.Has("rport") {
+			//	var port sip.Port
+			//	if viaHop.Port != nil {
+			//		port = *viaHop.Port
+			//	} else {
+			//		port = sip.DefaultPort(handler.Connection().Network())
+			//	}
+			//	raddr = fmt.Sprintf("%s:%d", rhost, port)
+			//}
 		}
 
 		msg.SetTransport(handler.connection.Network())
